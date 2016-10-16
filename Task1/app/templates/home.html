@@ -1,0 +1,58 @@
+﻿<div class="home view">
+    <div class="container-fluid">
+        <header>
+            <h3></h3>
+        </header>
+        <div class="row-fluid">
+            <div class="row tasks-map">
+                <div class="col col-90 map">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-fluid">
+            <div id="weather-widget" class="weather-widget">
+                <h2 id="weather-widget-city-name" class="weather-widget__city-name">Weather in {{data.Name}}, {{data.Sys.country}}</h2>
+                <h3 id="weather-widget-temperature" class="weather-widget__temperature">
+                    <img src="../Task1/Content/images/weather.png">{{data.Main.temp}} °C</h3>
+                <p id="weather-widget-main" class="weather-widget__main">{{data.Weather[0].description}}</p>
+                <p id="weather-widget-date" class="weather-widget__date">
+                    get at 
+                    {{data.Dt | date:'dd/MMM/yyyy' }}<br>
+                    &nbsp;{{data.Dt | date:'h:mm a' }}
+                </p>
+                <table class="weather-widget__items table table-striped table-bordered table-condensed">
+                    <tbody>
+                        <tr>
+                            <td>Wind</td>
+                            <td id="weather-widget-wind">Speed {{data.Wind.speed}}  m/s
+                                    <br>
+                                Degree ( {{data.Wind.deg}} )</td>
+                        </tr>
+                        <tr>
+                            <td>Sea Level</td>
+                            <td id="weather-widget-cloudiness">{{data.Main.sea_level}}</td>
+                        </tr>
+                        <tr>
+                            <td>Pressure</td>
+                            <td id="weather-widget-pressure">{{data.Main.pressure}} hpa</td>
+                        </tr>
+                        <tr>
+                            <td>Humidity</td>
+                            <td id="weather-widget-humidity">{{data.Main.humidity}} %</td>
+                        </tr>
+                        
+                        <tr>
+                            <td>Geo coords</td>
+                            <td id="weather-widget-geo-coords"><a href="javascript:void(0);">[ {{data.Coord.lat}}, {{data.Coord.lon}} ]</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="weather-widget-empty" class="weather-widget">
+                <p id="weather-widget-warning" class="weather-widget__warning"></p>
+            </div>
+        </div>
+    </div>
+</div>
